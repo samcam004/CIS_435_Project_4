@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE'){
 
     // If JSON decoding was unsuccessfull
     else{
-        $response = array("success" => false, "message" => "Invalid JSON date");
+        $response = array("success" => false, "message" => "Invalid JSON data");
         echo json_encode($response);
         die();
     }

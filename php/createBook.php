@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode($json);
 
     // Check if JSON decoding was successful
-    if($data != NULL){
+    if($data !== NULL){
 
         // Grabbing data from JSON
         $newISBN = isset($data->ISBN) ? intval($data->ISBN) : 0; // Set ISBN to 0 if can't find one
@@ -44,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query->close();
             die();
         } 
+
+        // If query fails 
         else {
             $response = array("success" => false, "message" => "Failed to add book to the Database!");
             echo json_encode($response);
@@ -54,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-    // If JSON decoding was unsuccessful
+    // If JSON decoding was unsuccessfull
     else{
         $response = array("success" => false, "message" => "Invalid JSON data");
         echo json_encode($response);
