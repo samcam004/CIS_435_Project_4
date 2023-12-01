@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form test</title>
+    <script src="admin.js"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Admin Page
+        </h1>
+    </header>
+
+    <main>
+        <!-- create section -->
+        <div class="create">
+            <h1> Add Book </h1>
+            
+                <label for="name"> Book Name:</label>
+                <input type="text" id="name" name="name">
+                <br>
+
+                <label for="isbn"> ISBN:</label>
+                <input type="text" id="isbn" name="isbn">
+                <br>
+
+                <label for="price"> Price:</label>
+                <input type="text" id="price" name="price">
+                <br>
+
+                <label for="author"> Author:</label>
+                <input type="text" id="author" name="author">
+                <br>
+
+                <label for="genre"> Genre:</label>
+                <input type="text" id="genre" name="genre">
+                <br>
+
+                <button id="btn-submit-data">Add Book</button>
+            
+        </div>
+
+        <!-- view section -->
+        <div class="view">
+            <h1> Current Books </h1>
+            <button id="btn-get-data">View Books</button>
+            <ul id="output">
+    
+            </ul>
+
+        </div>
+
+        <!-- update section -->
+        <div class="update">
+            <h1> Update Current Books </h1>
+
+                <p>Choose Book by ISBN to update<br>
+
+                <select id="update_id" name = "update_id" ><!-- dropdown -->
+                    
+                </select><br>
+
+                <label for="donut_name2">Enter New Price:</label>
+                <input type="text" id="donut_name2" name="donut_name2">
+                <br>
+
+       
+                <button id="btn-update-data">Update Book</button>
+        </div>
+
+        <!-- delete section -->
+        <div class="delete">
+            <h1> Delete Books </h1>
+                <p>Choose Book by ISBN to delete<br>
+                <select id="delete_id" name="delete_id"> <!-- dropdown -->
+                    
+                </select><br>
+
+                <button id="btn-delete-data">Delete Book</button>       
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* title styling*/
+header{
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* style list*/
+ul{
+    list-style-type: none;
+    text-align:center;
+}
+
+/* add space between items*/
+li{
+    margin: 10px 0;
+  }
+
+/* text color and size*/
+body{
+   
+    font-size: large;
+}
+
+/* align content, add border to main*/
+main{
+    text-align: center;
+    border: 2px solid;
+    background-color: white;
+}
+
+/* stlye create section*/
+.create{
+    border: 2px solid balck;
+    padding-bottom: 10px;
+    line-height:200%;
+}
+
+/* stlye view section*/
+.view{
+    border: 2px solid;
+}
+
+/* stlye update section*/
+.update{
+    border: 2px solid;
+    line-height:200%;
+}
+
+/* stlye delete section*/
+.delete{
+    border: 2px solid;
+    line-height: 200%;
+}
