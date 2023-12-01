@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="js\index.js"></script>
     <title>Project 4 Index</title>
 </head>
 <body>
@@ -67,7 +68,7 @@
         <div class="form">
             <h1>User Login</h1>
             <form action="php\login.php" method="post">
-                Username <input type="text" name="username"><br>
+                Username: <input type="text" name="username"><br>
                 Password: <input type="text" name="password"><br>
                 <input type="submit">
             </form>
@@ -77,13 +78,34 @@
         <div class="adminForm">
             <h1>Admin Login</h1>
             <form action="php\adminLogin.php" method="post">
-                Username <input type="text" name="username"><br>
+                Username: <input type="text" name="username"><br>
                 Password: <input type="text" name="password"><br>
                 <input type="submit">
             </form>
         </div>
 
+        <div class="create">
+            <h1> Create Account </h1>
+            
+                <label for="username"> Enter Username:</label>
+                <input type="text" id="username" name="username">
+                <br>
+
+                <label for="password"> Enter Password:</label>
+                <input type="text" id="password" name="password">
+                <br>
+
+                <label for="email"> Enter Email:</label>
+                <input type="text" id="email" name="email">
+                <br>
+
+                <button id="btn-submit-data">Create Account</button>
+            
+        </div>
+
     </div>
+
+    
 
 </body>
 </html>
