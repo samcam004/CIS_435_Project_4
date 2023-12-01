@@ -20,6 +20,31 @@ body {
     margin-top: 20px;
 }
 
+.login {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: solid 5px;
+    border-radius: 10px;
+    background-color: wheat;
+}
+
+.form {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.adminForm {
+    text-align: center;
+}
+
+.create {
+    text-align: center;
+    margin-right:10px;
+}
 
 header {
     display: flex;
@@ -74,13 +99,4 @@ thead {
 
 tbody {
     background-color: antiquewhite;
-}
-
-.login{
-    display: flex;
-    justify-content: space-between
-}
-
-.adminForm{
-    float: right;
 }
