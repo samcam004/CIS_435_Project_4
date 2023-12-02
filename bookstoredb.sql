@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2023 at 04:33 AM
+-- Generation Time: Dec 02, 2023 at 03:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`Username`, `Password`, `Type`, `Email`) VALUES
-('admin', 'admin', 0, 'N/A');
+('admin', 'admin', 0, 'N/A'),
+('user1', 'password', 1, 'user@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -48,11 +49,31 @@ INSERT INTO `accounts` (`Username`, `Password`, `Type`, `Email`) VALUES
 --
 
 CREATE TABLE `books` (
+  `Author` varchar(30) NOT NULL,
+  `Title` varchar(30) NOT NULL,
   `ISBN` int(11) NOT NULL,
-  `Name` varchar(11) NOT NULL,
-  `Author` varchar(11) NOT NULL,
-  `Price` int(11) NOT NULL,
-  `Genre` varchar(11) NOT NULL
+  `Genre` varchar(30) NOT NULL,
+  `Price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`Author`, `Title`, `ISBN`, `Genre`, `Price`) VALUES
+('Guy', 'Book1', 123, 'fiction', 2),
+('Guy', 'book2', 321, 'nonfiction', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `ID` int(255) NOT NULL,
+  `Username` int(255) NOT NULL,
+  `ISBN` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
