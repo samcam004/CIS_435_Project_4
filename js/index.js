@@ -2,6 +2,9 @@ function start() {
     //handle create account
     const createButton = document.getElementById('btn-submit-data');
     createButton.onclick = createButtonClick;
+
+    const getButton = document.getElementById('submit');
+    getButton.onclick = getButtonClick;
 }
 
 //create button, passes html data to php
@@ -16,11 +19,39 @@ async function createButtonClick(){
     await create(username,password,email);
   }
 
+async function getButtonClick(){
+  //get data from input boxes
+  let type = (document.getElementById('find')).value;
+  let input =(document.getElementById('search')).value;
+
+  //receive data
+  let responseData = await get(type,input);
+
+  //select table
+  let tableBody =  document.getElementById('table').getElementsByTagName('tbody')[0];
+
+  //clear table
+  while(tableBody.rows.length > 0) {
+    tableBody.deleteRow(0);
+  }
+
+  //iterate through book array
+  for (let i =0; i< responseData.length;i++){
+    row = tableBody.insertRow(-1);
+
+    //add for each info
+    for (let k =0;k<5;k++){
+      cell = row.insertCell(k);
+      text = document.createTextNode(responseData[i][k]);
+      cell.appendChild(text);
+    }
+
+  }
+}
+
 //use POST to send data to php
 async function create(username,password,email) {
-    console.log(username);
-    console.log(password);
-    console.log(email);
+    
     try {
         await fetch(
             'http://localhost/CIS_435_Project_4/php/createAccount.php', 
@@ -43,7 +74,37 @@ async function create(username,password,email) {
     catch(error) {
       console.log("error");
     }
+}
+
+async function get(type,input) {
+  let result = "";
+
+  try {
+      const response = await fetch(
+        'http://localhost/CIS_435_Project_4/php/searchBook.php', 
+          {
+              method: 'POST',
+              headers: {
+                  'Accept' : 'application/json'
+              },
+
+              
+              //pass data 
+              body: JSON.stringify({
+                0: type,
+                1: input,
+            })
+
+          }
+      );
+      result = await response.json();
+      
   }
+  catch(error) {
+      console.log("error");
+  }
+  return result;
+}
 
 
 window.addEventListener('load', start);
