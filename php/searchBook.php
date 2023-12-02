@@ -19,7 +19,7 @@
     if(mysqli_connect_error()){
         echo "Failed to connect to maria Db" . $mysqli->connect_error;
 
-        die("error coenncting");
+        die("error connecting");
     }
 
     //insert statement
