@@ -101,3 +101,8 @@ tbody {
     background-color: antiquewhite;
 }
 
+.displayName{
+    background-color: white;
+    border: solid 2px;
+    
+}
