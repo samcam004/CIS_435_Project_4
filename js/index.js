@@ -3,6 +3,7 @@ function start() {
     const createButton = document.getElementById('btn-submit-data');
     createButton.onclick = createButtonClick;
 
+    //handle query for book
     const getButton = document.getElementById('submit');
     getButton.onclick = getButtonClick;
 }

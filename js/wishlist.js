@@ -5,7 +5,10 @@ function start() {
 
     //button for adding book to wishlist
     const addButton = document.getElementById('btn-submit-wishlist');
-    addButton.onclick = createButtonClick;
+    addButton.onclick = addButtonClick;
+
+    const viewButton = document.getElementById('btn-get-wishlist');
+    viewButton.onclick = viewButtonClick;
 }
 
 //get data when cliking button
@@ -18,16 +21,16 @@ async function getButtonClick(){
   let responseData = await get(type,input);
 
   //select table
-  let tableBody =  document.getElementById('table').getElementsByTagName('tbody')[0];
+  let tableID =  document.getElementById('table').getElementsByTagName('tbody')[0];
 
   //clear table
-  while(tableBody.rows.length > 0) {
-    tableBody.deleteRow(0);
+  while(tableID.rows.length > 0) {
+    tableID.deleteRow(0);
   }
 
   //iterate through book array
   for (let i =0; i< responseData.length;i++){
-    row = tableBody.insertRow(-1);
+    row = tableID.insertRow(-1);
 
     //add for each info
     for (let k =0;k<5;k++){
@@ -54,7 +57,37 @@ async function getButtonClick(){
 
 }
 
-async function createButtonClick(){
+//
+async function viewButtonClick(){
+  //get isbn and username
+  let username = (document.getElementById('displayName')).innerText;
+  
+  let responseData  = await view(username);
+  
+
+  //get table id
+  let tableID =  document.getElementById('table2').getElementsByTagName('tbody')[0];
+
+  //clear table
+  while(tableID.rows.length > 0) {
+    tableID.deleteRow(0);
+  }
+
+  for (let i =0; i< responseData.length;i++){
+    row = tableID.insertRow(-1);
+
+    //add for each info
+    
+    cell = row.insertCell(0);
+    text = document.createTextNode(responseData[i][2]);
+    cell.appendChild(text);
+  
+
+  }
+
+}
+
+async function addButtonClick(){
   //get isbn and username
   let username = (document.getElementById('displayName')).innerText;
   let ISBN =(document.getElementById('selectBook')).value;
@@ -62,8 +95,6 @@ async function createButtonClick(){
   await create(username,ISBN);
   
 }
-
-
 
 async function get(type,input) {
   let result = ""; 
@@ -119,7 +150,35 @@ async function create(username,ISBN) {
   catch(error) {
     console.log("error");
   }
+  
 }
+async function view(username) {
+  let result = ""; 
 
+  try {
+      const response = await fetch(
+        'http://localhost/CIS_435_Project_4/php/getWishlist.php', 
+          {
+              method: 'POST',
+              headers: {
+                  'Accept' : 'application/json'
+              },
+
+              
+              //pass data 
+              body: JSON.stringify({
+                0: username
+            })
+
+          }
+      );
+      result = await response.json();
+      
+  }
+  catch(error) {
+      console.log("error");
+  }
+  return result;
+}
 
 window.addEventListener('load', start);

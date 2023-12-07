@@ -88,7 +88,28 @@
             
          </div>
 
+         <div class="getWishlist">
     
+            <button id="btn-get-wishlist">View Wishlist</button>
+            
+         </div>
+
+         <div class="wishlist-table">
+                    <table class ="table2" id = "table2">
+                        <thead>
+                            <tr>
+                                <th>ISBN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+         </div>
+
+
         <div>
             <footer><h3>© 2023 Book Store, LLC.</h3></footer>
         </div>
