@@ -1,7 +1,14 @@
 /* title styling*/
-header{
-    text-align: center;
-    font-size: xx-large;
+header {
+    display: flex;
+    flex-direction: row;
+    border: solid 5px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
 }
 
 /* style list*/
@@ -15,39 +22,70 @@ li{
     margin: 10px 0;
   }
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border: solid 5px;
+    border-radius: 10px;
+    background-color: wheat;
+}
+
 /* text color and size*/
 body{
-   
+   background-color: grey;
     font-size: large;
 }
 
 /* align content, add border to main*/
 main{
     text-align: center;
-    border: 2px solid;
+    /*border: 5px solid;
+    border-radius: 10px;
     background-color: white;
+    margin-top: 10px;*/
 }
 
 /* stlye create section*/
 .create{
-    border: 2px solid balck;
+    background-color: white;
+    border: 5px solid;
+    border-radius: 10px;
+    margin-top: 10px;
     padding-bottom: 10px;
     line-height:200%;
 }
 
 /* stlye view section*/
 .view{
-    border: 2px solid;
+    background-color: white;
+    border: 5px solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    line-height: 200%;
 }
 
 /* stlye update section*/
 .update{
-    border: 2px solid;
-    line-height:200%;
+    background-color: white;
+    border: 5px solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    line-height: 200%;
 }
 
 /* stlye delete section*/
 .delete{
-    border: 2px solid;
+    background-color: white;
+    border: 5px solid;
+    border-radius: 10px;
+    margin-top: 10px;
     line-height: 200%;
+}
+
+h1.head {
+    font-family:'Times New Roman', Times, serif;
+    font-variant: small-caps;
+    font-size: 250%;
 }
