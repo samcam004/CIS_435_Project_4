@@ -8,6 +8,50 @@ function start() {
     getButton.onclick = getButtonClick;
 }
 
+//LOGIN Type 1 start
+async function openUser() {
+  document.getElementById("userForm").style.display = "block";
+  if (document.getElementById("adminForm").style.display = "block") {
+    document.getElementById("adminForm").style.display = "none";
+  }
+  if (document.getElementById("createForm").style.display = "block") {
+    document.getElementById("createForm").style.display = "none";
+  }
+}
+
+async function closeUser() {
+  document.getElementById("userForm").style.display = "none";
+}
+
+async function openAdmin() {
+  document.getElementById("adminForm").style.display = "block";
+  if (document.getElementById("userForm").style.display = "block") {
+    document.getElementById("userForm").style.display = "none";
+  }
+  if (  document.getElementById("createForm").style.display = "block") {
+    document.getElementById("createForm").style.display = "none";
+  }
+}
+
+async function closeAdmin() {
+    document.getElementById("adminForm").style.display = "none";
+}
+
+async function openCreate() {
+  document.getElementById("createForm").style.display = "block";
+  if (document.getElementById("userForm").style.display = "block") {
+    document.getElementById("userForm").style.display = "none";
+  }
+  if (document.getElementById("adminForm").style.display = "block") {
+    document.getElementById("adminForm").style.display = "none";
+  }
+}
+
+async function closeCreate() {
+  document.getElementById("createForm").style.display = "none";
+}
+//LOGIN Type 1 end
+
 //create button, passes html data to php
 async function createButtonClick(){
 

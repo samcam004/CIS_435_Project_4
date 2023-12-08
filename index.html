@@ -17,6 +17,64 @@
             </header>
         </div>
 
+        <!--LOGIN Button start-->
+        <div class="dropdown" style="float:right;">
+            <button class="dropbtn"><h3>Login</h3></button>
+            <div class="dropdown-content">
+              <button class="user-button" onclick="openUser()">User Login</button>
+              <button class="admin-button" onclick="openAdmin()">Admin Login</button>
+              <button class="create-button" onclick="openCreate()">Create Account</button>
+            </div>
+        </div>
+
+        <div class="form-popup" id="userForm">
+            <form  action="php\login.php" method="post" class="form-container">
+
+                <h1>User Login</h1>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="username" required><br>
+
+                <label for="password"><b>Password</b></label>
+                <input type="text" placeholder="Enter password" name="password" required><br>
+
+                <input type="submit" class="btn">
+                <button type="button" class="btn cancel" onclick="closeUser()">Close</button>
+            </form>
+        </div>
+
+        <div class="form-popup" id="adminForm">
+            <form action="php\adminLogin.php" method="post" class="form-container">
+                <h1>Admin Login</h1>
+
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="username" required><br>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="text" placeholder="Enter password" name="password" required><br>
+
+                <input type="submit" class="btn">
+                <button type="button" class="btn cancel" onclick="closeAdmin()">Close</button>
+            </form>
+        </div>
+
+        <div class="form-popup" id="createForm">
+            <form class="form-container">
+                <h1>Create Account</h1>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter username" name="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter password" name="psw" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter email" name="email" required>
+
+                <button type="submit" class="btn">Create</button>
+                <button type="button" class="btn cancel" onclick="closeCreate()">Close</button>
+            </form>
+        </div>
+        <!--LOGIN Button end-->
+
         <div>
             <main>
                 <div class="search-bar">
