@@ -33,6 +33,7 @@
 
     else{
         echo("Invalid");
+        header("Location: http://localhost/projects/project4/index.html");
     }
 
     $mysqli->close();
