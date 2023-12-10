@@ -58,32 +58,16 @@ header {
     margin-top: 10px;
 }
 
-main {
-
-}
-
 footer {
     border-top: solid 5px;
     margin-top: 10px;
     width: 100%;
 }
 
-h1 {
-
-}
-
 h1.head {
     font-family:'Times New Roman', Times, serif;
     font-variant: small-caps;
     font-size: 250%;
-}
-
-h2 {
-
-}
-
-h3 {
-
 }
 
 table {
@@ -111,7 +95,6 @@ tbody {
     padding-top: 20px;
 }
 
-  /* The popup form - hidden by default */
 .form-popup {
     background-color: wheat;
     display: none;
@@ -123,43 +106,38 @@ tbody {
     z-index: 9;
   }
   
-  /* Add styles to the form container */
   .form-container {
-
     max-width: 300px;
     padding: 10px;
     background-color: wheat;
   }
   
-  /* Full-width input fields */
   .form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: white;
   }
   
-  /* When the inputs get focus, do something */
   .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
+    background-color: white;
     outline: none;
   }
 
   .form-container input[type=email], .form-container input[type=email] {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
-    background: #f1f1f1;
+    background: #ddd;
   }
 
   .form-container input[type=email]:focus, .form-container input[type=email]:focus {
-    background-color: #ddd;
+    background-color: white;
     outline: none;
   }
   
-  /* Set a style for the submit/login button */
   .form-container .btn {
     background-color: #04AA6D;
     color: white;
@@ -171,25 +149,13 @@ tbody {
     opacity: 0.8;
   }
   
-  /* Add a red background color to the cancel button */
   .form-container .cancel {
     background-color: red;
   }
   
-  /* Add some hover effects to buttons */
   .form-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
-
-
-
-
-
-
-
-
-
-
 
   .dropbtn {
     background-color: white;
@@ -226,9 +192,15 @@ tbody {
     display: block;
   }
   
-  .dropdown-content a:hover {background-color: #f1f1f1;}
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
   .dropdown:hover .dropdown-content {
        display: flex;
        flex-direction: column;
     }
-  .dropdown:hover .dropbtn {background-color: wheat;}
+
+  .dropdown:hover .dropbtn {
+    background-color: wheat;
+  }
