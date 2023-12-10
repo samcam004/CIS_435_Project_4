@@ -1,7 +1,9 @@
 function start() {
     //handle create account
+    /* --Diabling for alternate create account method--
     const createButton = document.getElementById('btn-submit-data');
     createButton.onclick = createButtonClick;
+    */
 
     //handle query for book
     const getButton = document.getElementById('submit');

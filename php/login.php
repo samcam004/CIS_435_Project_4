@@ -25,6 +25,9 @@
 
     if (mysqli_num_rows($result) === 1) {
         header("Location: http://localhost/CIS_435_Project_4/wishlist.php?x=$username&y=$password");
+
+        //Sam's directoty pass
+        //header("Location: http://localhost/projects/project4/wishlist.php?x=$username&y=$password");
     }
 
 

@@ -52,24 +52,24 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="text" placeholder="Enter password" name="password" required><br>
 
-                <button id="btn-submit-data" class="btn">Login</button>
+                <input type="submit" class="btn">
                 <button type="button" class="btn cancel" onclick="closeAdmin()">Close</button>
             </form>
         </div>
 
         <div class="form-popup" id="createForm">
-            <form class="form-container">
+            <form action="php/createAccountV2.php" method="post" class="form-container">
                 <h1>Create Account</h1>
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter username" name="username" required>
+                <input type="text" placeholder="Enter username" name="username" required><br>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter password" name="psw" required>
+                <input type="text" placeholder="Enter password" name="password" required><br>
 
                 <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="Enter email" name="email" required>
+                <input type="text" placeholder="Enter email" name="email" required><br>
 
-                <button type="submit" class="btn">Submit</button>
+                <input type="submit" class="btn">
                 <button type="button" class="btn cancel" onclick="closeCreate()">Close</button>
             </form>
         </div>
@@ -146,6 +146,13 @@
         <div class="create">
             <h1> Create Account </h1>
             
+                <form action="php/createAccountV2.php" method="post">
+                    Username: <input type="text" name="username"><br>
+                    Password: <input type="text" name="password"><br>
+                    Email: <input type="text" name="email"><br>
+                    <input type="submit">
+                </form>
+                
                 <label for="username"> Enter Username:</label>
                 <input type="text" id="username" name="username">
                 <br>
@@ -159,11 +166,11 @@
                 <br>
 
                 <button id="btn-submit-data">Create Account</button>
-            
+                
         </div>
-
+        -->
     </div>
-    -->
+    
     
 
 </body>
