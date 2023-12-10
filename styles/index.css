@@ -18,6 +18,7 @@ body {
 
 .result-table {
     margin-top: 20px;
+    min-width: 100%;
 }
 
 .login {
@@ -75,6 +76,7 @@ table {
     border: solid 5px;
     border-radius: 5px;
     background-color: white;
+    width: 100%;
 }
 
 thead {

@@ -140,7 +140,8 @@ async function get(type,input) {
 
   try {
       const response = await fetch(
-        'http://localhost/CIS_435_Project_4/php/searchBook.php', 
+          'http://localhost/CIS_435_Project_4/php/searchBook.php', 
+          //'http://localhost/projects/project4/php/searchBook.php',
           {
               method: 'POST',
               headers: {
