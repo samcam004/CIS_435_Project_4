@@ -29,14 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $newISBN = isset($data->ISBN) ? intval($data->ISBN) : 0; // Set ISBN to 0 if can't find one
         $newName = $data->name ?? '';   // Set name to blank if can't find one
         $newAuthor = $data->author ?? '';  // Set author to blank if can't find one
+        $newGenre = $data->genre ?? ''; // Set genre to blank if cant find one 
         $newPrice = isset($data->price) ? intval($data->price) : 0; // Set price to 0 if can't find one
 
         // Preparing SQL query 
-        $sql = "INSERT INTO $table (ISBN, Name, Author, Price) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO $table (ISBN, Title, Author, Genre, Price) VALUES (?, ?, ?, ?, ?)";
         $query = $connection->prepare($sql);
 
         // Executing query
-        $query->bind_param("issi", $newISBN, $newName, $newAuthor, $newPrice);
+        $query->bind_param("isssi", $newISBN, $newName, $newAuthor, $newGenre, $newPrice);
         if ($query->execute()) {
             $response = array("success" => true, "message" => "New Book added to the Database Successfully!");
             echo json_encode($response);

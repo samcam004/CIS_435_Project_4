@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form test</title>
-    <script src="admin.js"></script>
+    <script src="../js/admin.js"></script>
     <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
+
+
+
+    
     <div class="flex-container">
+
+
         <div>
             <header>
                 <img src="./admin_image.png" alt="bookes" width="100" height="100">
@@ -25,37 +31,48 @@
                 <div class="create">
                     <h1> Add Book </h1>
                     
-                        <label for="name"> Book Name:</label>
+                        <label for="isbn"> ISBN:</label>
+                        <input type="text" id="ISBN" name="isbn"> 
+                        <br>
+                    
+                        <label for="name">Title: </label>
                         <input type="text" id="name" name="name">
                         <br>
-
-                        <label for="isbn"> ISBN:</label>
-                        <input type="text" id="isbn" name="isbn">
-                        <br>
-
-                        <label for="price"> Price:</label>
-                        <input type="text" id="price" name="price">
-                        <br>
-
+                    
                         <label for="author"> Author:</label>
                         <input type="text" id="author" name="author">
                         <br>
-
+                    
                         <label for="genre"> Genre:</label>
                         <input type="text" id="genre" name="genre">
                         <br>
-
-                        <button id="btn-submit-data">Add Book</button>
                     
+                        <label for="price"> Price:</label>
+                        <input type="text" id="price" name="price">
+                        <br>
+                
+                    <button id="btn-submit-data">Add Book</button>
                 </div>
 
                 <!-- view section -->
                 <div class="view">
                     <h1> Current Books </h1>
-                    <button id="btn-get-data">View Books</button>
-                    <ul id="output">
-            
-                    </ul>
+                    <table class="booksTable">
+                        <thead class="tableHeaderRow">
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Price</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody class="tableCurrentBody">
+
+                        </tbody>
+                    </table> 
+                    
 
                 </div>
 
