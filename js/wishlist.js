@@ -7,6 +7,7 @@ function start() {
     const addButton = document.getElementById('btn-submit-wishlist');
     addButton.onclick = addButtonClick;
 
+    //button for view wishlist
     const viewButton = document.getElementById('btn-get-wishlist');
     viewButton.onclick = viewButtonClick;
 }
@@ -45,7 +46,7 @@ async function getButtonClick(){
   let select = document.getElementById("selectBook"); 
   select.innerHTML="";
     
-    //add names to drop down list
+    //add to drop down list
     for( let i=0;i<responseData.length;i++){ 
 
       let el = document.createElement("option");
@@ -57,13 +58,10 @@ async function getButtonClick(){
 
 }
 
-//
+//handle get wishlist function
 async function viewButtonClick(){
-  //get isbn and username
   let username = (document.getElementById('displayName')).innerText;
-  
   let responseData  = await view(username);
-  
 
   //get table id
   let tableID =  document.getElementById('table2').getElementsByTagName('tbody')[0];
@@ -87,6 +85,7 @@ async function viewButtonClick(){
 
 }
 
+//handle add to wishlist fucntion
 async function addButtonClick(){
   //get isbn and username
   let username = (document.getElementById('displayName')).innerText;
@@ -152,6 +151,7 @@ async function create(username,ISBN) {
   }
   
 }
+
 async function view(username) {
   let result = ""; 
 

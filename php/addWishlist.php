@@ -6,11 +6,9 @@
     $data = file_get_contents("php://input");
     $newData = json_decode($data, true);
 
-
     //make var for query
     $username = $newData[0];
     $ISBN = $newData[1];
-
 
     //connect to database
     $mysqli = mysqli_connect("localhost", "adminuser", "admin", "bookstoredb");

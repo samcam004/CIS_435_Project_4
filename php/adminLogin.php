@@ -1,5 +1,5 @@
 <?php
-
+    //get username and password
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
@@ -13,11 +13,8 @@
         die("error coenncting");
     }
 
-    //first check if admin
-    //then check if user exist
 
     //insert statement
-
 
     $sql = "SELECT *FROM accounts WHERE Username = '{$username}' AND Password = '{$password}' AND Type = '0';";
 

@@ -14,8 +14,6 @@
         die("error coenncting");
     }
 
-    //first check if admin
-    //then check if user exist
 
     //insert statement
     $sql = "INSERT INTO accounts (Username, Password, Type, Email) VALUES ('{$username}', '{$password}' , '1', '{$email}' );";
