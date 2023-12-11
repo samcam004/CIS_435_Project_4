@@ -38,8 +38,6 @@ body{
     font-size: large;
 }
 
-
-
 .create, .view, .update, .delete{
     background-color: white;
     border: 5px solid;
@@ -51,12 +49,22 @@ body{
     text-align: center;
 }
 
-
-
 .create h1, .view h1, .update h1, .delete h1{
     text-align: center;
 }
 
+/*  table formatting  */
+.view .booksTable, .update .updateTable{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.view .booksTable tr, .update .updateTable tr{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
 
 h1.head {
     font-family:'Times New Roman', Times, serif;

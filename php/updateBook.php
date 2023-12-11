@@ -16,11 +16,15 @@ if ($connection->connect_error) {
 }
 
 // If server request is UPDATE
-if ($_SERVER['REQUEST_METHOD'] === 'UPDATE') {
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
     // Decode JSON
     $json = file_get_contents('php://input');
     $data = json_decode($json);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        http_response_code(400); // Or whatever you want to do with this error
+        die();
+    }
 
     // Check if JSON decoding was successful
     if ($data !== NULL) {
@@ -30,19 +34,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'UPDATE') {
         $updates = [];
 
         // If admin updates name 
-        if (isset($data->name)) {
-            $updates[] = "name = '" . $connection->real_escape_string($data->name) . "'";
+        if (isset($data->Title)) {
+            $updates[] = "Title = '" . $connection->real_escape_string($data->Title) . "'";
         }
 
         // If admin updates author 
-        if (isset($data->author)) {
-            $updates[] = "author = '" . $connection->real_escape_string($data->author) . "'";
+        if (isset($data->Author)) {
+            $updates[] = "author = '" . $connection->real_escape_string($data->Author) . "'";
+        }
+
+        // If admin updates genre 
+        if (isset($data->Genre)) {
+            $updates[] = "genre = '" . $connection->real_escape_string($data->Genre) . "'";
         }
 
         // If admin updates price  
-        if (isset($data->price)) {
+        if (isset($data->Price)) {
             // Grabbing integer value 
-            $newPrice = intval($data->price);
+            $newPrice = intval($data->Price);
             $updates[] = "price = " . $newPrice;
         }
 

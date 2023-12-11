@@ -10,13 +10,7 @@
 </head>
 
 <body>
-
-
-
-    
     <div class="flex-container">
-
-
         <div>
             <header>
                 <img src="./admin_image.png" alt="bookes" width="100" height="100">
@@ -24,7 +18,6 @@
                 <img src="./admin_image.png" alt="bookes" width="100" height="100">
             </header>
         </div>
-
         <div>
             <main>
                 <!-- create section -->
@@ -69,18 +62,27 @@
                             
                         </thead>
                         <tbody class="tableCurrentBody">
-
                         </tbody>
                     </table> 
-                    
-
                 </div>
 
                 <!-- update section -->
                 <div class="update">
                     <h1> Update Current Books </h1>
-
-                        
+                    <table class="updateTable">
+                        <thead class="tableHeaderRow">
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Price</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody class="updateTableBody">
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- delete section -->
@@ -88,7 +90,7 @@
                     <h1> Delete Books </h1>
                         <p>Choose Book by ISBN to delete<br>
                         <select id="delete_id" name="delete_id"> <!-- dropdown -->
-                            
+
                         </select><br>
                         <button id="btn-delete-data">Delete Book</button>       
                 </div>
