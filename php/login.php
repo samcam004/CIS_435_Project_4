@@ -33,7 +33,10 @@
 
     else{
         echo("Invalid");
-        header("Location: http://localhost/projects/project4/index.html");
+        header("Location: http://localhost/CIS_435_Project_4/index.html");
+
+        //Sam's directoty pass
+        //header("Location: http://localhost/projects/project4/index.html");
     }
 
     $mysqli->close();
