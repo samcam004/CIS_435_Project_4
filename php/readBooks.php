@@ -2,8 +2,8 @@
 
 // Global Variables 
 $host = "localhost";
-$username = "admin";
-$password = "password123";
+$username = "adminuser";
+$password = "admin";
 $database = "bookstoredb";
 $table = "books";
 

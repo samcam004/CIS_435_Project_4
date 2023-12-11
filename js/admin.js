@@ -10,7 +10,7 @@ function start() {
 
 async function fetchBooks() {
     try {
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/readBooks.php');
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/readBooks.php');
         const json = await response.json();
 
         const tableBody = document.querySelector('.tableCurrentBody');
@@ -53,7 +53,7 @@ async function fetchBooks() {
 
 async function fetchISBNs() {
     try {
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/readBooks.php');
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/readBooks.php');
         const json = await response.json();
         const deleteDropdown = document.getElementById('delete_id');
 
@@ -83,7 +83,7 @@ async function addBook(){
     }
     // Sending data back to DB
     try {
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/createBook.php', {
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/createBook.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ async function addBook(){
 async function deleteBook() {
     const selectedISBN = document.getElementById('delete_id').value;
     try {
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/deleteBook.php', {
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/deleteBook.php', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -125,7 +125,7 @@ async function deleteBook() {
 
 async function fetchUpdateBooks(){
     try {
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/readBooks.php');
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/readBooks.php');
         const json = await response.json();
 
         const tableBody = document.querySelector('.updateTableBody');
@@ -232,7 +232,7 @@ async function updateBook(book, newRow) {
     };
 
     try { 
-        const response = await fetch('http://localhost/projects/CIS_435_Project_4/php/updateBook.php', {
+        const response = await fetch('http://localhost/CIS_435_Project_4/php/updateBook.php', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
